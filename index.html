@@ -317,6 +317,8 @@
     <section id="testimonios">
         <h2>Testimonios</h2>
         <p>Lee lo que dicen nuestros clientes satisfechos.</p>
+        <p>"Excelente, muchísimas gracias por su servicio!✨
+            No dudaré en recomendarlo"</p>
         <div class="gallery-container">
             <img src="cliente1.jpg" alt="Testimonio 1">
             <img src="cliente2.jpg" alt="Testimonio 2">
@@ -331,11 +333,25 @@
             <a href="https://api.whatsapp.com/send?phone=50258978555&text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios." target="_blank">WhatsApp</a>
         </p>
     </section>
+    <section id="aviso-legal" style="display:none; padding: 20px; background-color: rgba(0,0,0,0.7);">
+        <h2>Aviso Legal</h2>
+        <p><strong>Titular del sitio web:</strong> Digital Care</p>
+        <p><strong>Responsable:</strong> [Tu nombre o nombre de la empresa]</p>
+        <p><strong>Propiedad Intelectual:</strong> Todos los contenidos de este sitio web son propiedad de Digital Care...</p>
+        <p><strong>Exención de Responsabilidad:</strong> Digital Care no se responsabiliza por errores...</p>
+        <button onclick="toggleSection('')">Volver</button>
+    </section>
+    
+    <section id="terminos-servicio" style="display:none; padding: 20px; background-color: rgba(0,0,0,0.7);">
+        <h2>Términos de Servicio</h2>
+        <p><strong>Aceptación de los Términos:</strong> Al usar este sitio, usted acepta los presentes términos...</p>
+        <p><strong>Limitación de Responsabilidad:</strong> Digital Care no garantiza que el sitio esté siempre disponible...</p>
+        <button onclick="toggleSection('')">Volver</button>
+    </section>
     <footer>
         <div class="footer-links">
-            <a href="#">Aviso Legal</a>
-            <a href="#">Política de Privacidad</a>
-            <a href="#">Términos de Servicio</a>
+            <a href="aviso-legal.html">Aviso Legal</a>
+            <a href="terminos-de-servicio.html">Términos de Servicio</a>
         </div>
         <p>&copy; 2024 Digital Care</p>
     </footer>
@@ -361,7 +377,16 @@
             }
             
         }
-        document.addEventListener('DOMContentLoaded', function() {
+        
+        function toggleSection(sectionId) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.style.display = section.id === sectionId ? 'block' : 'none';
+    });
+    
+
+    }
+    document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
             const navMenu = document.querySelector('.nav-menu');
 
@@ -369,15 +394,15 @@
                 navMenu.classList.toggle('active');
             });
 
-            // Cerrar menú si se hace clic fuera de él
             document.addEventListener('click', function(event) {
                 if (!menuToggle.contains(event.target) && !navMenu.contains(event.target)) {
                     navMenu.classList.remove('active');
                 }
             });
-});
-        // Ejecutar al cargar la página
+        });
+    // Ejecutar al cargar la página
         cambiarFondoPorHora();
+        
 
         // Actualizar cada hora
         setInterval(cambiarFondoPorHora, 60 * 60 * 1000);

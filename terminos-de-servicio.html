@@ -16,12 +16,23 @@
         }
 
         header {
-            background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para el encabezado */
-            padding: 20px;
-            text-align: center;
-            font-size: 1.8em;
-            color: #fff;
-        }
+    background-color: #333;
+    color: #fff;
+    padding: 8px 0; /* Reducir el padding para hacerlo más pequeño */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px; /* Reducir la altura total del encabezado */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em; /* Reducir el tamaño del texto */
+}
 
         section {
             background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para las secciones */
@@ -31,6 +42,10 @@
             border-radius: 10px;
             max-width: 900px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .section-noche {
+            background-color: rgba(212, 206, 206, 0.2); /* Fondo más claro para el modo nocturno */
         }
 
         h2 {
@@ -64,6 +79,17 @@
 
         footer a:hover {
             background-color: #555;
+        }
+
+        /* Estilos responsivos para dispositivos pequeños */
+        @media screen and (max-width: 768px) {
+            h2 {
+                font-size: 1.5em;
+            }
+
+            p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -108,5 +134,34 @@
     <footer>
         <a href="index.html">Volver al inicio</a>
     </footer>
+
+    <script>
+        // Función para cambiar el fondo según la hora del día
+        function cambiarFondoPorHora() {
+            const horaActual = new Date().getHours(); // Obtiene la hora actual
+            const body = document.body;
+            const secciones = document.querySelectorAll('section');
+
+            if (horaActual >= 6 && horaActual < 18) {
+                // Durante el día
+                body.style.background = "url('DigitalCareBackGround.jpg') no-repeat center center fixed";
+                body.style.backgroundSize = "cover";
+                secciones.forEach(seccion => seccion.classList.remove('section-noche')); // Remover fondo nocturno de todas las secciones
+            } else {
+                // Durante la noche
+                body.style.background = "url('DigitalCareNight.jpg') no-repeat center center fixed";
+                body.style.backgroundSize = "cover";
+                secciones.forEach(seccion => seccion.classList.add('section-noche')); // Aplicar fondo nocturno en secciones
+            }
+        }
+
+        // Ejecutar la función al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            cambiarFondoPorHora();
+        });
+
+        // Actualizar cada hora
+        setInterval(cambiarFondoPorHora, 60 * 60 * 1000);
+    </script>
 </body>
 </html>

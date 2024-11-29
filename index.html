@@ -233,15 +233,21 @@
                 display: block;
             }
             
-            .gallery-container {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .gallery-container img {
-                width: 90%;
-                height: auto;
-            }
+            @media screen and (max-width: 768px) {
+    .gallery-container {
+        display: flex;
+        flex-direction: column;  /* Asegura que las imágenes se apilen verticalmente */
+        gap: 10px;
+        text-align: center;  /* Centra las imágenes dentro del contenedor */
+        margin: 0 auto; /* Asegura que el contenedor de las imágenes esté centrado */
+    }
+    
+    .gallery-container img {
+        width: 80%;  /* Ajusta el ancho de las imágenes para pantallas más pequeñas */
+        height: auto;
+        margin: 0 auto;  /* Centra las imágenes individualmente */
+    }
+}
             
             section {
                 padding: 40px 10px;

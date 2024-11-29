@@ -333,16 +333,15 @@
             <a href="https://api.whatsapp.com/send?phone=50258978555&text=Hola,%20quiero%20más%20información%20sobre%20sus%20servicios." target="_blank">WhatsApp</a>
         </p>
     </section>
-    <section id="aviso-legal" style="display:none; padding: 20px; background-color: rgba(0,0,0,0.7);">
-        <h2>Aviso Legal</h2>
-        <p><strong>Titular del sitio web:</strong> Digital Care</p>
-        <p><strong>Responsable:</strong> [Tu nombre o nombre de la empresa]</p>
-        <p><strong>Propiedad Intelectual:</strong> Todos los contenidos de este sitio web son propiedad de Digital Care...</p>
-        <p><strong>Exención de Responsabilidad:</strong> Digital Care no se responsabiliza por errores...</p>
+    <section id="aviso-legal" class="fondo-secciones" style="display:none; padding: 20px;">
+        <p><span class="section-title">Titular del sitio web:</span> Digital Care</p>
+        <p><span class="section-title">Responsable:</span> Digital Care.</p>
+        <p><span class="section-title">Teléfono de contacto:</span> +502 5897 8555</p>
+        <p><span class="section-title">Correo electrónico:</span> digitalcare114@gmail.com</p>
         <button onclick="toggleSection('')">Volver</button>
     </section>
     
-    <section id="terminos-servicio" style="display:none; padding: 20px; background-color: rgba(0,0,0,0.7);">
+    <section id="terminos-servicio" class="fondo-secciones" style="display:none; padding: 20px;">
         <h2>Términos de Servicio</h2>
         <p><strong>Aceptación de los Términos:</strong> Al usar este sitio, usted acepta los presentes términos...</p>
         <p><strong>Limitación de Responsabilidad:</strong> Digital Care no garantiza que el sitio esté siempre disponible...</p>
@@ -356,56 +355,59 @@
         <p>&copy; 2024 Digital Care</p>
     </footer>
     <script>
-        function cambiarFondoPorHora() {
-            const horaActual = new Date().getHours();; // Obtiene la hora actual
-            const body = document.body;
-            const hero = document.querySelector('.hero');
-            const secciones = document.querySelectorAll('section');
+   function cambiarFondoPorHora() {
+    const horaActual = new Date().getHours(); // Obtiene la hora actual
+    const body = document.body;
+    const hero = document.querySelector('.hero');
+    const secciones = document.querySelectorAll('section');
+    const seccionesAvisoTerminos = document.querySelectorAll('.fondo-secciones'); // Asegúrate de que las secciones tienen esta clase
 
-            if (horaActual >= 6 && horaActual < 18) {
-                // Durante el día
-                body.style.background = "url('DigitalCareBackGround.jpg') no-repeat center center fixed";
-                body.style.backgroundSize = "cover";
-                hero.classList.remove('noche'); // Remover fondo nocturno
-                secciones.forEach(seccion => seccion.classList.remove('section-noche')); // Remover fondo nocturno de secciones
-            } else {
-                // Durante la noche
-                body.style.background = "url('DigitalCareNight.jpg') no-repeat center center fixed";
-                body.style.backgroundSize = "cover";
-                hero.classList.add('noche'); // Aplicar fondo más oscuro en la sección hero
-                secciones.forEach(seccion => seccion.classList.add('section-noche')); // Aplicar fondo nocturno en secciones
-            }
-            
-        }
-        
-        function toggleSection(sectionId) {
+    if (horaActual >= 6 && horaActual < 18) {
+        // Durante el día
+        body.style.background = "url('DigitalCareBackGround.jpg') no-repeat center center fixed";
+        body.style.backgroundSize = "cover";
+        hero.classList.remove('noche'); // Remover fondo nocturno
+        secciones.forEach(seccion => seccion.classList.remove('section-noche')); // Remover fondo nocturno de todas las secciones
+        seccionesAvisoTerminos.forEach(seccion => seccion.classList.remove('section-noche')); // Asegúrate de que estas secciones también se ajusten
+    } else {
+        // Durante la noche
+        body.style.background = "url('DigitalCareNight.jpg') no-repeat center center fixed";
+        body.style.backgroundSize = "cover";
+        hero.classList.add('noche'); // Aplicar fondo más oscuro en la sección hero
+        secciones.forEach(seccion => seccion.classList.add('section-noche')); // Aplicar fondo nocturno en secciones
+        seccionesAvisoTerminos.forEach(seccion => seccion.classList.add('section-noche')); // Asegúrate de que estas secciones también tengan fondo nocturno
+    }
+}
+
+function toggleSection(sectionId) {
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         section.style.display = section.id === sectionId ? 'block' : 'none';
     });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Alternar el menú en dispositivos pequeños
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
+
+    // Cerrar el menú si se hace clic fuera de él
+    document.addEventListener('click', function(event) {
+        if (!menuToggle.contains(event.target) && !navMenu.contains(event.target)) {
+            navMenu.classList.remove('active');
+        }
+    });
     
+    // Ejecutar la función para cambiar el fondo por hora
+    cambiarFondoPorHora();
 
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-
-            menuToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-            });
-
-            document.addEventListener('click', function(event) {
-                if (!menuToggle.contains(event.target) && !navMenu.contains(event.target)) {
-                    navMenu.classList.remove('active');
-                }
-            });
-        });
-    // Ejecutar al cargar la página
-        cambiarFondoPorHora();
-        
-
-        // Actualizar cada hora
-        setInterval(cambiarFondoPorHora, 60 * 60 * 1000);
+    // Actualizar el fondo cada hora
+    setInterval(cambiarFondoPorHora, 60 * 60 * 1000);
+});
     </script>
 </body>
 </html>

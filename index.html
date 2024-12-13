@@ -48,6 +48,9 @@
             outline: none;
             transition: transform 0.2s ease;
             position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
         }
         .menu-toggle:hover {
             transform: scale(1.1);
@@ -95,10 +98,10 @@
         }
         .submenu a {
             padding: 15px 20px; /* Relleno interno más grande */
-    display: block; /* Ocupa todo el ancho */
-    color: #333; /* Texto gris oscuro */
-    text-decoration: none; /* Sin subrayado */
-    border-radius: 5px; /* Bordes redondeados */
+          display: block; /* Ocupa todo el ancho */
+           color: #333; /* Texto gris oscuro */
+          text-decoration: none; /* Sin subrayado */
+       border-radius: 5px; /* Bordes redondeados */
         }
         .submenu a:hover {
             background-color: #333;
@@ -128,7 +131,7 @@
         }
 
         .hero {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(212, 206, 206, 0.2);
             height: 400px;
             display: flex;
             flex-direction: column;
@@ -224,12 +227,13 @@
 
             nav {
                 position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: transparent;
-                padding: 0;
-                display: none;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%); /* Centra el menú */
+            width: 100%;
+            background-color: transparent;
+            padding: 0;
+            display: none;
             }
 
             nav.active {
@@ -243,7 +247,7 @@
 
             nav li {
                 margin: 10px 0;
-                text-align: left;
+                text-align: center;
             }
 
             .gallery-container {
@@ -267,7 +271,7 @@
 
         @media screen and (min-width: 769px) {
             header {
-                flex-direction: row;
+                flex-direction: column;
                 justify-content: space-between;
             }
 

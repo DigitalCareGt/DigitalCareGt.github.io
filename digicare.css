@@ -1,0 +1,369 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #000000, #001a2e);
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Menú de navegación */
+header {
+    background-color: #111;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.menu li {
+    margin: 0 30px;
+}
+
+.menu a {
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #4ad9d9;
+}
+/* Estilos para menú responsivo */
+@media screen and (max-width: 768px) {
+    header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        position: relative;
+    }
+
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .hamburger-menu span {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 3px 0;
+        transition: 0.4s;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+        z-index: 999;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    .menu li {
+        margin: 20px 0;
+        font-size: 1.5rem;
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 3rem;
+        cursor: pointer;
+        color: #333;
+    }
+
+    .logo-mobile {
+        max-height: 50px;
+    }
+}
+
+/* Estilos para pantallas grandes */
+@media screen and (min-width: 769px) {
+    .hamburger-menu, .close-menu {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        gap: 30px;
+    }
+}
+
+/* Sección Hero */
+.hero-section {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: 150px; /* Ajusta según el tamaño deseado */
+    height: auto;
+}
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.hero-section h2 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #ccc;
+}
+
+/* Sección de Servicios */
+.servicios-section {
+    padding: 50px 20px;
+    background-color: #000;
+}
+
+.servicios-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.servicio-card i {
+    font-size: 3rem; /* Tamaño del icono */
+    color: #4ad9d9; /* Color del icono */
+    margin-bottom: 10px;
+}
+
+/* Sección Acerca De */
+.acerca-section {
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #000000, #001a2e);
+    text-align: center;
+}
+
+.mision-vision-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mision-container, .vision-container {
+    margin-bottom: 40px;
+}
+
+.mision-container h2, .vision-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.mision-container p, .vision-container p {
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.cta-button {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #e64a19;
+}
+
+/* Sección de Contacto (actualizada) */
+.contacto-section {
+    padding: 50px 20px;
+    background-color: #000;
+    text-align: center;
+}
+
+.contacto-section h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.contacto-info {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.redes-sociales {
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.social-link {
+    color: #6e48aa;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #9370db;
+    text-decoration: underline;
+}
+
+.contacto-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #111;
+    color: white;
+}
+
+.submit-button {
+    background-color: #4ad9d9;
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.submit-button:hover {
+    background-color: #3bc0c0;
+}
+
+/* Footer (actualizado) */
+footer {
+    background-color: #111;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    margin: 0 15px;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #4ad9d9;
+}
+
+.copyright {
+    color: #4ad9d9;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .servicio-card {
+        padding: 20px;
+    }
+
+    .mision-container h2, .vision-container h2, .contacto-section h2 {
+        font-size: 2rem;
+    }
+    
+    .footer-links a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+.form-message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.form-message.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+}
+
+.form-message.error {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+}

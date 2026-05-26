@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Términos de Servicio - Digital Care</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f6f1;
+      --fg: #111312;
+      --muted: rgba(17,19,18,0.60);
+      --card: rgba(255,255,255,0.80);
+      --border: rgba(17,19,18,0.10);
+      --accent: #2a7d6f;
+      --accent-light: #e6f4f1;
+    }
+
+    body {
+      font-family: 'Outfit', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--border);
+      background: rgba(247,246,241,0.88);
+      backdrop-filter: blur(16px);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-weight: 900;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    .nav-back {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.15s;
+    }
+    .nav-back:hover { color: var(--fg); text-decoration: none; }
+
+    /* ── Main ── */
+    main {
+      flex: 1;
+      max-width: 760px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 2.5rem;
+    }
+
+    .sections { display: flex; flex-direction: column; gap: 0; }
+
+    .section {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+    .section:last-child { border-bottom: 1px solid var(--border); }
+
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+    }
+
+    p, li {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    ul { padding-left: 1.2rem; }
+    li { margin-top: 0.35rem; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-brand" href="/">Digital Care</a>
+    <a class="nav-back" href="/">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Volver al inicio
+    </a>
+  </nav>
+
+  <main>
+    <p class="eyebrow">Legal</p>
+    <h1>Términos de Servicio</h1>
+
+    <div class="sections">
+      <div class="section">
+        <h2>Aceptación de los Términos</h2>
+        <p>Al acceder y navegar por este sitio web, usted acepta los presentes términos y condiciones. Si no está de acuerdo con alguno de ellos, le recomendamos no utilizar este sitio.</p>
+      </div>
+
+      <div class="section">
+        <h2>Uso Permitido</h2>
+        <p>Este sitio web debe ser utilizado únicamente con fines legales. Queda prohibido:</p>
+        <ul>
+          <li>Usar este sitio para fines fraudulentos o ilegales.</li>
+          <li>Copiar, reproducir o modificar los contenidos del sitio sin autorización.</li>
+          <li>Intentar acceder sin autorización a sistemas o datos relacionados con Digital Care.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Servicios</h2>
+        <p>Digital Care ofrece servicios de mantenimiento, soporte técnico, ensamble de equipos y asesoría tecnológica. Los presupuestos y tiempos de entrega son estimaciones y pueden variar según el diagnóstico del equipo. Todo servicio se coordina directamente con el cliente antes de ejecutarse.</p>
+      </div>
+
+      <div class="section">
+        <h2>Limitación de Responsabilidad</h2>
+        <p>Digital Care no garantiza que el sitio esté siempre disponible o libre de errores. No nos hacemos responsables por daños directos o indirectos derivados del uso del sitio web o de la información contenida en él.</p>
+      </div>
+
+      <div class="section">
+        <h2>Modificaciones</h2>
+        <p>Digital Care se reserva el derecho de actualizar o modificar estos términos en cualquier momento. Recomendamos revisar esta sección periódicamente para estar al tanto de cualquier cambio.</p>
+      </div>
+
+      <div class="section">
+        <h2>Ley Aplicable</h2>
+        <p>Los presentes términos se rigen por las leyes de la República de Guatemala. Cualquier controversia derivada del uso de este sitio web será sometida a los tribunales competentes de Guatemala.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Digital Care &nbsp;·&nbsp; Chiquimula, Guatemala</p>
+  </footer>
+</body>
+</html>
